@@ -109,6 +109,33 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-cta:hover { border-color: var(--green-bright); background: rgba(47,217,127,0.08); }
 @media (max-width: 760px) { .nav-links { display: none; } }
+/* ---------- nav socials ---------- */
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-socials { display: flex; align-items: center; gap: 2px; }
+.nav-socials a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 999px;
+  color: var(--muted);
+  transition: color 0.25s, background 0.25s, transform 0.25s;
+}
+.nav-socials a:hover { color: var(--green-bright); background: rgba(47,217,127,0.08); transform: translateY(-2px); }
+
+/* ---------- contact alt links ---------- */
+.contact-alt { margin-top: 28px; color: var(--muted); font-size: 13px; }
+.contact-alt a {
+  color: var(--paper);
+  border-bottom: 1px solid var(--line);
+  transition: color 0.25s, border-color 0.25s;
+}
+.contact-alt a:hover { color: var(--green-bright); border-color: var(--green-bright); }
+
+@media (max-width: 760px) {
+  .nav-name { display: none; }
+  .nav-right { gap: 6px; }
+  .nav-socials a { width: 30px; height: 30px; }
+  .nav-cta { padding: 8px 12px; }
+}
+
 
 /* ---------- hero ---------- */
 .hero {
