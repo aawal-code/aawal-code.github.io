@@ -132,9 +132,9 @@ html = html.replace('<h2 class="contact-title reveal">', '<h2 class="contact-tit
 en['hero.sub'] = 'I build full-stack web and mobile products, and design the visuals that ship with them. Based in Cairo, building at <a href="https://digi-sail.com" target="_blank" rel="noopener" data-hover>Digi-Sail</a>.'
 ar['hero.sub'] = 'أبني منتجات ويب وموبايل متكاملة، وأصمّم الهوية البصرية التي تُشحن معها. مقرّي القاهرة، وأعمل في <a href="https://digi-sail.com" target="_blank" rel="noopener" data-hover>Digi-Sail</a>.'
 de['hero.sub'] = 'Ich baue Full-Stack-Web- und Mobile-Produkte und gestalte die Visuals, die mit ihnen ausgeliefert werden. Ich lebe in Kairo und arbeite bei <a href="https://digi-sail.com" target="_blank" rel="noopener" data-hover>Digi-Sail</a>.'
-en['ct.title'] = "Let's build something<br /><span class=\"accent-outline\">worth scrolling.</span>"
-ar['ct.title'] = 'لنبنِ شيئاً<br /><span class="accent-outline">يستحق التمرير.</span>'
-de['ct.title'] = 'Lass uns etwas bauen,<br /><span class="accent-outline">das sich zu scrollen lohnt.</span>'
+en['ct.title'] = 'Self-taught,<br /><span class="accent-outline">still going.</span>'
+ar['ct.title'] = 'تعلّمتُ بنفسي،<br /><span class="accent-outline">وما زلتُ أكمل.</span>'
+de['ct.title'] = 'Autodidakt,<br /><span class="accent-outline">immer noch dabei.</span>'
 
 open(P, 'w', encoding='utf-8').write(html)
 

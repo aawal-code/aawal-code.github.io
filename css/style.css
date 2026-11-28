@@ -836,7 +836,7 @@ html[dir="rtl"] .hero-sub a, html[dir="rtl"] .proj-repo { white-space: nowrap; }
 .proj-rail {
   display: flex; align-items: flex-start; gap: 22px;
   overflow-x: auto; overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scroll-snap-type: none; scroll-behavior: auto;
   scroll-padding-inline: 5vw;
   scrollbar-width: none; -ms-overflow-style: none;
   padding: 4px 5vw 8px; margin: 0 -5vw;
@@ -846,7 +846,7 @@ html[dir="rtl"] .hero-sub a, html[dir="rtl"] .proj-repo { white-space: nowrap; }
 .proj-rail.is-dragging { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; }
 .proj-rail:focus-visible { outline: 2px solid rgba(47,217,127,0.5); outline-offset: 6px; border-radius: 20px; }
 .proj-slide {
-  flex: 0 0 min(560px, 86vw); min-height: 440px; scroll-snap-align: start;
+  flex: 0 0 min(560px, calc((100% - 22px) / 2)); min-height: 440px;
   display: flex; flex-direction: column;
   background: linear-gradient(180deg, rgba(18,32,25,0.92), rgba(10,18,14,0.92));
   border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
@@ -862,6 +862,7 @@ html[dir="rtl"] .hero-sub a, html[dir="rtl"] .proj-repo { white-space: nowrap; }
 .proj-slide .proj-points { margin-top: 16px; }
 .proj-slide .work-tech { margin-top: 16px; }
 .proj-slide .proj-links { margin-top: auto; padding-top: 24px; }
+.proj-carousel.is-static .proj-ctrl { display: none; }
 .proj-ctrl { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
 .proj-arrow {
   width: 42px; height: 42px; display: grid; place-items: center; padding: 0;

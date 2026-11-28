@@ -96,7 +96,7 @@ window.AAWAL_I18N = {
     "ct.also": "also:",
     "footer": "&copy; 2026 Abdulaziz Awal. Hand-coded with HTML, CSS &amp; vanilla JS.",
     "hero.sub": "I build full-stack web and mobile products, and design the visuals that ship with them. Based in Cairo, building at <a href=\"https://digi-sail.com\" target=\"_blank\" rel=\"noopener\" data-hover>Digi-Sail</a>.",
-    "ct.title": "Let's build something<br /><span class=\"accent-outline\">worth scrolling.</span>"
+    "ct.title": "Self-taught,<br /><span class=\"accent-outline\">still going.</span>"
   },
   ar: {
     "nav.work": "العمل",
@@ -193,7 +193,7 @@ window.AAWAL_I18N = {
     "ct.also": "أيضاً:",
     "footer": "&copy; 2026 عبدالعزيز عوض. مكتوب يدوياً بـ HTML وCSS وJavaScript.",
     "hero.sub": "أبني منتجات ويب وموبايل متكاملة، وأصمّم الهوية البصرية التي تُشحن معها. مقرّي القاهرة، وأعمل في <a href=\"https://digi-sail.com\" target=\"_blank\" rel=\"noopener\" data-hover>Digi-Sail</a>.",
-    "ct.title": "لنبنِ شيئاً<br /><span class=\"accent-outline\">يستحق التمرير.</span>"
+    "ct.title": "تعلّمتُ بنفسي،<br /><span class=\"accent-outline\">وما زلتُ أكمل.</span>"
   },
   de: {
     "nav.work": "Arbeit",
@@ -290,7 +290,7 @@ window.AAWAL_I18N = {
     "ct.also": "außerdem:",
     "footer": "&copy; 2026 Abdulaziz Awal. Von Hand geschrieben mit HTML, CSS und Vanilla JS.",
     "hero.sub": "Ich baue Full-Stack-Web- und Mobile-Produkte und gestalte die Visuals, die mit ihnen ausgeliefert werden. Ich lebe in Kairo und arbeite bei <a href=\"https://digi-sail.com\" target=\"_blank\" rel=\"noopener\" data-hover>Digi-Sail</a>.",
-    "ct.title": "Lass uns etwas bauen,<br /><span class=\"accent-outline\">das sich zu scrollen lohnt.</span>"
+    "ct.title": "Autodidakt,<br /><span class=\"accent-outline\">immer noch dabei.</span>"
   },
 };
 

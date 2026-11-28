@@ -92,6 +92,48 @@
     if (suppressClick) { e.preventDefault(); e.stopPropagation(); suppressClick = false; }
   }, true);
 
+  /* ---------- drift: sits still while the cards fit, loops when they do not ---------- */
+  var carouselEl = document.querySelector(".proj-carousel");
+  var clones = [], setWidth = 0, drifting = false, hovered = false, focused = false, lastTs = 0;
+  function clearClones() { clones.forEach(function (n) { n.parentNode.removeChild(n); }); clones = []; }
+  function rebuild() {
+    clearClones();
+    var cs = getComputedStyle(rail);
+    var padSum = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+    var overflow = (rail.scrollWidth - padSum) > (rail.clientWidth - padSum) + 2;
+    drifting = overflow && !reduce.matches;
+    if (carouselEl) carouselEl.classList.toggle("is-static", !overflow);
+    rail.scrollLeft = 0;
+    if (!drifting) return;
+    setWidth = rail.scrollWidth;
+    slides.forEach(function (s) {
+      var c = s.cloneNode(true);
+      c.setAttribute("aria-hidden", "true");
+      Array.prototype.forEach.call(c.querySelectorAll("a,button"), function (el) { el.tabIndex = -1; });
+      rail.appendChild(c); clones.push(c);
+    });
+  }
+  function tick(ts) {
+    if (drifting && !document.hidden && !reduce.matches) {
+      var dt = lastTs ? Math.min(64, ts - lastTs) : 16;
+      lastTs = ts;
+      var speed = (hovered || focused) ? 0.12 : 1;
+      var step = 0.55 * (dt / 16) * speed;
+      var pos = rail.scrollLeft + (rtl() ? -step : step);
+      if (rtl()) { if (pos <= -setWidth) pos += setWidth; }
+      else { if (pos >= setWidth) pos -= setWidth; }
+      rail.scrollLeft = pos;
+    } else { lastTs = ts; }
+    requestAnimationFrame(tick);
+  }
+  rail.addEventListener("mouseenter", function () { hovered = true; });
+  rail.addEventListener("mouseleave", function () { hovered = false; });
+  rail.addEventListener("focusin", function () { focused = true; });
+  rail.addEventListener("focusout", function () { focused = false; });
+  window.addEventListener("resize", function () { setTimeout(rebuild, 150); });
+  rebuild();
+  requestAnimationFrame(tick);
+
   var raf = 0;
   rail.addEventListener("scroll", function () {
     if (raf) return;
