@@ -14,7 +14,7 @@ T = [
  ("nav.contact","Contact","تواصل","Kontakt"),
  ("hero.eyebrow","// hello, world, I'm","// أهلاً، أنا","// hallo, ich bin"),
  ("hero.viewWork","View my work","شاهد أعمالي","Meine Arbeiten"),
- ("hero.avail","Open to a Fachinformatiker apprenticeship in Germany from October 2027","متاح للتدريب المهني (Fachinformatiker) في ألمانيا من أكتوبر 2027","Offen für eine Ausbildung als Fachinformatiker in Deutschland ab Oktober 2027"),
+ ("hero.avail","Open to a Fachinformatiker apprenticeship in Germany from October 2027","متاح للتدريب المهني (\u2066Fachinformatiker\u2069) في ألمانيا من أكتوبر 2027","Offen für eine Ausbildung als Fachinformatiker in Deutschland ab Oktober 2027"),
  ("hero.scroll","scroll","مرّر","scrollen"),
  ("mq.fullstack","Full-Stack Development","تطوير متكامل","Full-Stack-Entwicklung"),
  ("mq.design","Graphic Design","تصميم جرافيك","Grafikdesign"),
@@ -71,7 +71,7 @@ T = [
  ("about.f3","focus","التركيز","Fokus"),
  ("about.f3v","Full-stack web, mobile, design","ويب متكامل، موبايل، تصميم","Full-Stack-Web, Mobile, Design"),
  ("aus.title","Apprenticeship 2027","التدريب المهني 2027","Ausbildung 2027"),
- ("aus.lede","I am applying for an apprenticeship as Fachinformatiker für Anwendungsentwicklung, starting October 2027.","أتقدّم لتدريب مهني كـ Fachinformatiker für Anwendungsentwicklung (تطوير التطبيقات)، بدءاً من أكتوبر 2027.","Ich suche eine Ausbildung als Fachinformatiker für Anwendungsentwicklung, Start Oktober 2027."),
+ ("aus.lede","I am applying for an apprenticeship as Fachinformatiker für Anwendungsentwicklung, starting October 2027.","أتقدّم لتدريب مهني كـ \u2066Fachinformatiker für Anwendungsentwicklung\u2069 (تطوير التطبيقات)، بدءاً من أكتوبر 2027.","Ich suche eine Ausbildung als Fachinformatiker für Anwendungsentwicklung, Start Oktober 2027."),
  ("aus.p1","I live in Cairo and have worked as a junior software developer at Digi-Sail since August 2026, building web and mobile applications with React, TypeScript and PHP. I learn best when something actually runs at the end: ChanceClub above is mine, from the database to the layout.","أعيش في القاهرة وأعمل مطوّر برمجيات مبتدئاً في Digi-Sail منذ أغسطس 2026، أبني تطبيقات ويب وموبايل بـ React وTypeScript وPHP. أتعلّم أفضل حين يعمل شيء في النهاية فعلاً: ChanceClub أعلاه من عملي، من قاعدة البيانات إلى التصميم.","Ich lebe in Kairo und arbeite seit August 2026 als Junior Software Developer bei Digi-Sail. Dort baue ich Web- und Mobile-Anwendungen mit React, TypeScript und PHP. Am besten lerne ich, wenn am Ende etwas läuft: ChanceClub oben ist von mir, von der Datenbank bis zum Layout."),
  ("aus.p2","I am learning German on my own and aim for B1 by mid-2027. I can relocate to North Rhine-Westphalia and start there in October 2027. My CV is available in German and English.","أتعلّم الألمانية بنفسي وأستهدف مستوى B1 بحلول منتصف 2027. أستطيع الانتقال إلى شمال الراين-وستفاليا والبدء هناك في أكتوبر 2027. سيرتي الذاتية متاحة بالألمانية والإنجليزية.","Ich lerne Deutsch im Selbststudium und will bis Mitte 2027 Niveau B1 erreichen. Ich kann nach Nordrhein-Westfalen ziehen und dort im Oktober 2027 anfangen. Lebenslauf gibt es auf Deutsch und Englisch."),
  ("aus.fZiel","Target","الهدف","Ziel"),
@@ -112,6 +112,8 @@ for (k, s, a, d) in T:
         start = m.start()
         # is the tag that owns this text a closing tag?
         lt = html.rfind('<', 0, start + 1)
+        if 'data-i18n' in html[lt:start + 1]:
+            return m.group(0)
         closing = html[lt:lt + 2] == '</'
         if closing:
             return '><span data-i18n="%s">%s%s%s</span><' % (key, m.group(1), text, m.group(2))
