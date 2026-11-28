@@ -32,6 +32,10 @@
       var key = el.getAttribute("data-i18n");
       if (t[key] != null) el.textContent = decode(t[key]);
     });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-aria");
+      if (t[key] != null) el.setAttribute("aria-label", decode(t[key]));
+    });
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
       var key = el.getAttribute("data-i18n-html");
       if (t[key] != null) el.innerHTML = t[key];
@@ -49,6 +53,7 @@
 
     try { localStorage.setItem(STORE, locale); } catch (e) { /* private mode */ }
     if (window.AAWAL_startTyping) window.AAWAL_startTyping(locale);
+    if (window.AAWAL_syncCarousel) window.AAWAL_syncCarousel();
   }
 
   window.AAWAL_applyLocale = apply;
