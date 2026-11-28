@@ -702,7 +702,7 @@ a { color: inherit; text-decoration: none; }
   gap: 46px;
   align-items: start;
 }
-.de-lede {
+.de-copy .de-lede {
   font-size: clamp(20px, 2.4vw, 26px);
   font-weight: 500;
   letter-spacing: -0.01em;
