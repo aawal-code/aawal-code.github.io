@@ -6,7 +6,7 @@
   <title>AAWAL</title>
   <meta name="description" content="Abdulaziz Awal. Junior software developer and graphic designer based in Cairo. Full-stack web and mobile development at Digi-Sail. Open to a Fachinformatiker apprenticeship in Germany from October 2027." />
   <meta property="og:title" content="Abdulaziz Awal — Junior Software Developer &amp; Graphic Designer" />
-  <meta property="og:description" content="Full-stack web and mobile development, plus the design that ships with it. Projects: ChanceClub, AION. Open to an Ausbildung in Germany from October 2027." />
+  <meta property="og:description" content="Full-stack web and mobile development, plus the design that ships with it. Projects: ChanceClub and this site. Open to an Ausbildung in Germany from October 2027." />
   <meta property="og:image" content="assets/banner.png" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -239,25 +239,9 @@
           </article>
 
           <article class="proj-slide" role="listitem" aria-roledescription="slide">
-            <div class="proj-body">
-              <div class="proj-top">
-                <span class="work-tag mono" data-i18n="proj.opensource">Open source</span>
-                <span class="proj-year mono">2026</span>
-              </div>
-              <h3>AION</h3>
-              <p data-i18n="proj.aion.body">
-                A local-first AI workspace that connects your devices, projects, files and AI tools in one place. Built for privacy and control: it runs on your own machines instead of handing everything to a cloud account.
-              </p>
-              <ul class="work-tech mono">
-                <li>Node.js</li><li>JavaScript</li><li data-i18n="proj.localFirst">Local-first</li>
-              </ul>
-              <div class="proj-links">
-                <a class="proj-repo mono" href="https://github.com/aawal-code/AION" target="_blank" rel="noopener" data-hover>github.com/aawal-code/AION <span aria-hidden="true">&#8599;</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="proj-slide" role="listitem" aria-roledescription="slide">
+            <a class="proj-media" href="https://aawal-code.github.io/" target="_blank" rel="noopener" data-hover aria-label="Open the portfolio">
+              <img src="assets/projects/portfolio-home.png" alt="The portfolio home page: his name in large type, the typed role line and the availability pill on a dark green background" loading="lazy" />
+            </a>
             <div class="proj-body">
               <div class="proj-top">
                 <span class="work-tag mono" data-i18n="proj.thisSite">This site</span>
@@ -265,8 +249,13 @@
               </div>
               <h3 data-i18n="proj.pf.title">Portfolio</h3>
               <p data-i18n="proj.pf.body">
-                The page you are reading. Hand-written HTML, CSS and vanilla JavaScript with no framework and no build step, kept small enough to load instantly on a phone.
+                The site you are reading. Written by hand in HTML, CSS and vanilla JavaScript: no framework, no build step, nothing between the source and the page you see.
               </p>
+              <ul class="proj-points">
+                <li data-i18n="proj.pf.p1">Three locales, English, Arabic and German, with a full right-to-left layout for Arabic.</li>
+                <li data-i18n="proj.pf.p2">A scroll-snap projects carousel driven by drag, arrows or keyboard, which mirrors itself in Arabic.</li>
+                <li data-i18n="proj.pf.p3">Print and no-JS fallbacks, so every section still shows up when the page is printed or scripting is off.</li>
+              </ul>
               <ul class="work-tech mono">
                 <li>HTML</li><li>CSS</li><li>JavaScript</li><li data-i18n="proj.noBuild">No build step</li>
               </ul>
@@ -279,7 +268,7 @@
         </div>
         <div class="proj-ctrl">
           <button class="proj-arrow" type="button" data-proj-dir="prev" aria-label="Previous project" data-i18n-aria="proj.prev"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-          <p class="proj-count mono" aria-hidden="true"><span id="projIdx">01</span><span class="proj-count-sep">/</span><span>03</span></p>
+          <p class="proj-count mono" aria-hidden="true"><span id="projIdx">01</span><span class="proj-count-sep">/</span><span id="projTotal">02</span></p>
           <button class="proj-arrow" type="button" data-proj-dir="next" aria-label="Next project" data-i18n-aria="proj.next"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>

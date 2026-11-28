@@ -10,7 +10,9 @@
   var prevBtn = document.querySelector('.proj-arrow[data-proj-dir="prev"]');
   var nextBtn = document.querySelector('.proj-arrow[data-proj-dir="next"]');
   var idxEl = document.getElementById("projIdx");
+  var totalEl = document.getElementById("projTotal");
   if (!slides.length) return;
+  if (totalEl) totalEl.textContent = slides.length < 10 ? "0" + slides.length : "" + slides.length;
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   function rtl() { return getComputedStyle(rail).direction === "rtl"; }
